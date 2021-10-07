@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.etools.mft.unittest.core.models.client="http:///com/ibm/etools/mft/unittest/core/models/client.ecore" xmlns:com.ibm.wbit.comptest.common.models.event="http:///com/ibm/etools/mft/unittest/common/models/event.ecore" xmlns:http="http:///com/ibm//etools/mft/unittest/common/model2/http" xmlns:http_1="http:///com/ibm//etools/mft/unittest/common/model2/status" xmlns:jms="http:///com/ibm//etools/mft/unittest/common/model2/jms" xmlns:model2="http:///com/ibm//etools/mft/unittest/common/model2" xmlns:mq="http:///com/ibm//etools/mft/unittest/common/model2/mq">
+  <com.ibm.etools.mft.unittest.core.models.client:EclipseClient iD="1629268757323-0" eventTrace="/1" clientID="1629268757323-0">
+    <scopes xsi:type="model2:FlowTestScope" name="Configuration" iD="default" dirty="false">
+      <testModules xsi:type="model2:TestMsgFlow" name="/Customer/gen/Customer.msgflow" iD="1629268757323-4">
+        <inputNodes xsi:type="http:HTTPInputNode" nodeName="HTTP Input" urlSpecifier="/customer/v1*"/>
+      </testModules>
+      <testModules xsi:type="model2:TestAppOrLib" name="Customer" iD="1629268757323-5"/>
+      <settings xsi:type="model2:FlowSettings"/>
+      <settings xsi:type="model2:DeploymentSettings" runtimeEnvType="Integration Servers" runtimeInstance="localhost^SIS^ACESERVER^7600"/>
+      <settings xsi:type="mq:MQSettings"/>
+      <settings xsi:type="jms:JMSSettings"/>
+      <settings xsi:type="mq:MQMessageHeaders"/>
+      <settings xsi:type="jms:JMSMessageHeaders"/>
+      <messageHeaders xsi:type="mq:MQHeader" iD="1629268757323-3" headerName="Default Header"/>
+      <messageHeaders xsi:type="jms:JMSHeader" headerName="Default Header"/>
+    </scopes>
+  </com.ibm.etools.mft.unittest.core.models.client:EclipseClient>
+  <com.ibm.wbit.comptest.common.models.event:ExecutionEventTrace iD="1629268757323-1" children="/2 /8 /9"/>
+  <model2:InteractiveInputNodeInvocationEvent iD="1629268757339-6" readOnly="true" clientID="1629268757323-0" timestamp="1629268757339" children="/3 /4 /7" msgFlow="/Customer/gen/Customer.msgflow" nodeId="FCMComposite_1_1" testScopeID="default" nodeName="HTTP Input" nodeType="ComIbmWSInput.msgnode" targetDeploymentLocationID="1629268784289-10">
+    <request xsi:type="model2:TestMessage" iD="1629268757793-7">
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="WSDL_URI"/>
+      <properties name="WSDL_OPERATION_IN_NAME"/>
+      <properties name="WSDL_OPERATION_NAME"/>
+      <properties name="WSDL_OPERATION_OUT_NAME"/>
+      <properties name="plainText" stringValue="fxdfxfhffhx"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+    </request>
+  </model2:InteractiveInputNodeInvocationEvent>
+  <http_1:DeploymentStatus iD="1629268784282-8" parentID="1629268757339-6" timestamp="1629268784282" log="[Info]  Begin deploying message flows&#xD;&#xA;[Info]  Deploying the message flow application&#xD;&#xA;[Info]  Flow is required to be re-deployed because file /Customer/.project is not in the generated BAR file.&#xD;&#xA;[Info]  Going to rebuild and deploy BAR file&#xD;&#xA;[Info]  Cleaning BAR file...&#xD;&#xA;[Info]  Rebuilding BAR file...&#xD;&#xA;[Info]  Initializing test message monitors...&#xD;&#xA;[Info]  Deploying BAR file to Integration Server...&#xD;&#xA;[Info]  Test client is ready to send and monitor messages.&#xD;&#xA;[Info]  Starting message flows&#xD;&#xA;[Info]  Message flows deployment successfully completed" status="OK" totalWork="10" worked="10" scope="/0/@scopes.0"/>
+  <com.ibm.wbit.comptest.common.models.event:StartEvent name="Starting" iD="1629268787078-22" readOnly="true" clientID="1629268757323-0" parentID="1629268757339-6" timestamp="1629268787078" invokeCommandId="1629268787076-19" children="/5 /6"/>
+  <http:HTTPInformationEvent name="Sending Message to &quot;HTTP Input&quot;" iD="1629268787084-23" readOnly="true" clientID="1629268757323-0" parentID="1629268787078-22" timestamp="1629268787084" invokeCommandId="1629268787076-20" endpoint="http://localhost:7800/customer/v1*">
+    <message xsi:type="model2:TestMessage" iD="1629268757793-7">
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="WSDL_URI"/>
+      <properties name="WSDL_OPERATION_IN_NAME"/>
+      <properties name="WSDL_OPERATION_NAME"/>
+      <properties name="WSDL_OPERATION_OUT_NAME"/>
+      <properties name="plainText" stringValue="fxdfxfhffhx"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+    </message>
+  </http:HTTPInformationEvent>
+  <http:HTTPMonitorExceptionEvent name="Error sending message to &quot;HTTP Input&quot;" iD="1629268790754-25" readOnly="true" clientID="1629268757323-0" parentID="1629268787078-22" timestamp="1629268790755" invokeCommandId="1629268787076-20" module="/Customer/gen/Customer.msgflow" exceptionText="Error sending request to http &quot;http://localhost:7800/customer/v1*&quot;" trace="java.io.IOException: &lt;html>&#xA;&lt;head>&#xA;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;/>&#xA;&lt;title>404 Not Found&lt;/title>&#xA;&lt;/head>&#xA;&lt;body>&#xA;&lt;h1>404 Not Found&lt;/h1>&#xA;&lt;p>&#xA;BIP6311E: REST API '&amp;apos;Customer&amp;apos;' does not support method '&amp;apos;POST&amp;apos;' for URL '&amp;apos;http://localhost:7800/customer/v1*&amp;apos;'. &#xA;&lt;/p>&#xA;&lt;hr>&#xA;&lt;/body>&#xA;&lt;/html>&#xA;&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.transport.http.HttpClient.makeHttpCall(HttpClient.java:174)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.transport.http.HttpClient.makeSOAPRequest(HttpClient.java:99)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.transport.http.SendHTTPMessageDelegate.sendBytes(SendHTTPMessageDelegate.java:143)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.commchannel.mb.AbstractSendMessageDelegate.sendPlainText(AbstractSendMessageDelegate.java:255)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.commchannel.mb.AbstractSendMessageDelegate.sendMessage(AbstractSendMessageDelegate.java:208)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.transport.http.HTTPHandler.send(HTTPHandler.java:53)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.commchannel.mb.SendMessageOperation.sendMessage(SendMessageOperation.java:87)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.commchannel.jobs.SendMessageOperationJob.doRun(SendMessageOperationJob.java:94)&#xD;&#xA;&#x9;at com.ibm.etools.mft.unittest.core.commchannel.jobs.SendMessageOperationJob.run(SendMessageOperationJob.java:149)&#xD;&#xA;&#x9;at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)&#xD;&#xA;" endpoint="http://localhost:7800/customer/v1*"/>
+  <com.ibm.wbit.comptest.common.models.event:EndEvent name="Stopped" iD="1629268790762-26" readOnly="true" clientID="1629268757323-0" parentID="1629268757339-6" timestamp="1629268790762" invokeCommandId="1629268787076-20"/>
+  <mq:InteractiveMQEnqueueEvent iD="1629269015725-28" timestamp="1629269015725" host="localhost" port="0" queueManager="" queue="">
+    <properties name="SERVER_CHANNEL" stringValue="SYSTEM.BKR.CONFIG"/>
+    <request xsi:type="model2:TestMessage" iD="1629269015725-29" header="/0/@scopes.0/@messageHeaders.0">
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="plainText"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+    </request>
+  </mq:InteractiveMQEnqueueEvent>
+  <model2:InteractiveInputNodeInvocationEvent iD="1629269020496-30" timestamp="1629269020496" msgFlow="/Customer/gen/Customer.msgflow" nodeId="FCMComposite_1_1" testScopeID="default" nodeName="HTTP Input" nodeType="ComIbmWSInput.msgnode">
+    <request xsi:type="model2:TestMessage" iD="1629269020510-31">
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="WSDL_URI"/>
+      <properties name="WSDL_OPERATION_IN_NAME"/>
+      <properties name="WSDL_OPERATION_NAME"/>
+      <properties name="WSDL_OPERATION_OUT_NAME"/>
+      <properties name="plainText" stringValue=""/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+    </request>
+  </model2:InteractiveInputNodeInvocationEvent>
+</xmi:XMI>
